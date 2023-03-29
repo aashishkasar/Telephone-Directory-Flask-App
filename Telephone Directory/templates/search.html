@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<style type="text/css">
+	body{
+		background-color: rgb(2, 70, 72);
+		background-image: linear-gradient(rgb(3, 38, 74),rgb(223, 236, 243));
+	}
+h1{
+text-shadow: 4px 4px 4px black;
+color: white;
+text-decoration: underline;
+margin-top: 10px;
+margin-bottom: 30px;
+    }
+h2{
+	text-shadow:5px 5px 5px rgb(95, 4, 4);
+	color: aliceblue;
+	margin-bottom: 30px;
+    margin-left: 270px;
+		margin-top:-30px;
+}
+
+form{
+	background-color: rgb(1, 1, 21);
+		background-image: linear-gradient(to bottom right,rgb(0, 0, 6),rgb(37, 37, 147));
+		color:aliceblue;
+		height: 60%;
+		width: 50%;
+		border-radius: 15px;
+		box-shadow: 5px 5px 5px 5px rgb(2, 2, 118);
+		align-items: center;
+		margin-top:-20px;
+		margin-left:70px;
+}
+h4{
+	background-color: rgb(19, 35, 65);
+	color:white;
+	font-family:bold;
+	text-align: center;
+	height: 50%;
+	width: 50%;
+}
+label,input[type=text]{
+	margin-top: 40px;
+}
+input[type=text]{
+	width: 60%;
+}
+input[type=submit]{
+	width: 30%;
+	background-color:rgb(32, 48, 104) ;
+	color: aliceblue;
+	height: 30px;
+	border-radius: 8px;
+	text-size-adjust: 20px;
+}
+
+
+</style>
+<h1></h1>
+{% extends "index.html" %}
+{% block content %}
+
+<h2> Search Here! </h2>
+<form action="{{ url_for('search') }}"method='post'>
+<center>
+ <label for="">Search_Name: </label> <input type="text" name="Name"><br><br>
+<input type="Submit" value ="Enter">
+{% for Name,MobileNo in database.items() %}
+{% if Search_Name==Name %} <br><br>
+		<h4>Name: {{ Name }}<br><br>
+		Mobile_Number: {{ MobileNo }}</h4>
+{% endif %}
+{% endfor %}
+{% endblock %}
+</center>
+</form>

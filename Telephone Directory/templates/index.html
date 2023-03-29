@@ -1,0 +1,67 @@
+<style type="text/css">
+a{
+	color: white;
+}
+h1{
+text-shadow: 4px 4px 4px black;
+text-align: center;
+color: aliceblue;
+margin-top: 60px;
+text-decoration:underline;
+
+}
+body{
+	background-color: rgb(3, 28, 86);
+		background-image: linear-gradient(to bottom right,rgb(5, 89, 206),rgb(161, 204, 243));
+}
+li{
+	border: 2px solid black;
+	height: 30px;
+	width: 160px;
+	background-color: rgb(4, 53, 132);
+	margin: 30px;
+	border-radius: 5px;
+
+}
+li:hover{
+	background-color: rgb(60, 184, 113);
+}
+ul{
+
+	justify-content: space-evenly;
+text-align: center;
+color: white;
+margin-top: 10px;
+display: flex;
+}
+img{
+	position:absolute;
+	height: 60%;
+	right: 30px;
+	top: 210px;
+}
+
+
+</style>
+<i><h1>!!Telephone Directory!!</h1></i>
+<ul><li><a href="{{ url_for('index') }}" class="w3-bar-item w3-button  w3-button-primary">Home</a><br></li>
+	<li><a href="{{ url_for('add') }}" class="w3-bar-item w3-button">Add Details</a><br></li>
+
+      <li><a href="{{ url_for('display')}}" class="w3-bar-item w3-button">Diplay Details</a><br></li>
+      <li><a href="{{ url_for('search') }}" class="w3-bar-item w3-button">Search Details</a><br></li></ul>
+
+	  <img src="https://st.depositphotos.com/1002140/4248/v/600/depositphotos_42488139-stock-illustration-blue-telephone-directory.jpg" alt="">
+
+		<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<h5>TheAashishKasarFoundation: &copy;</h5>
+
+</body>
+</html>
+
+    {% block content %}
+    {% endblock %}
